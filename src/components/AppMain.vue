@@ -1,10 +1,10 @@
 <script>
-// import CardElement from "./CardElement.vue";
+import CardElement from "./CardElement.vue";
 import { store } from "../store.js";
 
 export default{
   components: {
-    // CardElement,
+    CardElement,
   },
 
   props: [
@@ -26,13 +26,14 @@ export default{
       <h4>Found ...</h4>
     </section>
     <section class="grid-cards">
-      <!-- <CardElement v-for="cardElement in cardsList" 
-      :imagePath="cardElement.card_images"
-      /> -->
-      <p v-for="cardElement in cards">
+      <CardElement v-for="cardElement in cards" 
+      :imagePath="cardElement.card_images[0].image_url"
+      :nameEl="cardElement.name"
+      />
+      <!-- <p v-for="cardElement in cards">
         {{ cardElement.card_images[0].image_url }}
         {{ cardElement.name }}
-      </p>
+      </p> -->
     </section>
   </div>
 </template>
