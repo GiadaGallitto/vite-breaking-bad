@@ -1,11 +1,27 @@
 <script>
+import CardElement from "./CardElement.vue";
+import { store } from "../store.js"
 
+export default{
+  components: {
+    CardElement,
+  },
+  
+  data() {
+    return{
+      store
+    }
+  }
+}
 </script>
 
 <template>
   <div class="main-container">
     <section class="cards-found">
       <h4>Found ...</h4>
+    </section>
+    <section class="grid-cards">
+      <CardElement />
     </section>
   </div>
 </template>
