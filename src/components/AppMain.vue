@@ -23,7 +23,7 @@ export default{
 <template>
   <div class="main-container">
     <section class="cards-found">
-      <h4>Found ...</h4>
+      <h4>Found {{ cards.length }} cards</h4>
     </section>
     <section class="grid-cards">
       <CardElement v-for="cardElement in cards" 
@@ -31,10 +31,6 @@ export default{
       :nameEl="cardElement.name"
       :archetype="cardElement.archetype"
       />
-      <!-- <p v-for="cardElement in cards">
-        {{ cardElement.card_images[0].image_url }}
-        {{ cardElement.name }}
-      </p> -->
     </section>
   </div>
 </template>
@@ -44,7 +40,7 @@ export default{
     width: 90%;
     margin: 5rem auto;
     background-color: white;
-    // border-radius: 20px;
+    border-radius: 20px;
     padding: 3.5rem;
     .cards-found{
       width: 100%;

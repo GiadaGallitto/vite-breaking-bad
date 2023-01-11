@@ -41,6 +41,7 @@ export default{
         }
         .text-box{
             padding: 1rem;
+
             h3{
                 color: white;
                 text-transform: uppercase;
