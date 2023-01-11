@@ -3,12 +3,13 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import axios from "axios";
+import { store } from "./store.js";
 
 export default {
 
   data() {
     return{
-      cardsList: [],
+      store
     }
   },
 
@@ -27,7 +28,7 @@ export default {
       })
       .then((response) => {
         console.log(response.data.data);
-        this.cardsList = response.data.data;
+        this.store.cardsList = response.data.data;
       })
       .catch(function (error) {
         console.log(error);
@@ -48,7 +49,7 @@ export default {
   </header>
 
   <main>
-    <AppMain :cards="cardsList" />
+    <AppMain :cards="store.cardsList" />
   </main>
 
   <footer>

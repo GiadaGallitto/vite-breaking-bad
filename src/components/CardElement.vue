@@ -9,6 +9,7 @@ export default{
 
 <template>
     <div class="card">
+        <!-- <p>{{imagePath}}</p> -->
         <div class="image-box">
             <img :src="imagePath" alt="">
         </div>
