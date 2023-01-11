@@ -29,6 +29,7 @@ export default{
       <CardElement v-for="cardElement in cards" 
       :imagePath="cardElement.card_images[0].image_url"
       :nameEl="cardElement.name"
+      :archetype="cardElement.archetype"
       />
       <!-- <p v-for="cardElement in cards">
         {{ cardElement.card_images[0].image_url }}
@@ -41,7 +42,6 @@ export default{
 <style lang="scss" scoped>
   .main-container{
     width: 90%;
-    height: 1000px;
     margin: 5rem auto;
     background-color: white;
     // border-radius: 20px;
@@ -51,6 +51,11 @@ export default{
       background-color: #212529;
       padding: 1.5rem 1rem;
       color: white;
+    }
+    .grid-cards{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 </style>
