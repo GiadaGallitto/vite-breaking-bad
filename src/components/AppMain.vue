@@ -1,16 +1,27 @@
 <script>
 import CardElement from "./CardElement.vue";
-import { store } from "../store.js"
+import { store } from "../store.js";
+import axios from "axios";
 
 export default{
   components: {
     CardElement,
   },
-  
+
   data() {
     return{
       store
     }
+  },
+
+  methods: {
+    getCard(){
+      axios.get( )
+    }
+  },
+
+  created (){
+    this.getCard();
   }
 }
 </script>
