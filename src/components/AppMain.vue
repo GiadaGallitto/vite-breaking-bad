@@ -1,28 +1,22 @@
 <script>
-import CardElement from "./CardElement.vue";
+// import CardElement from "./CardElement.vue";
 import { store } from "../store.js";
-import axios from "axios";
 
 export default{
   components: {
-    CardElement,
+    // CardElement,
   },
+
+  props: [
+    `cards`
+  ],
 
   data() {
     return{
-      store
+      store,
     }
   },
 
-  methods: {
-    getCard(){
-      axios.get( )
-    }
-  },
-
-  created (){
-    this.getCard();
-  }
 }
 </script>
 
@@ -32,7 +26,13 @@ export default{
       <h4>Found ...</h4>
     </section>
     <section class="grid-cards">
-      <CardElement />
+      <!-- <CardElement v-for="cardElement in cardsList" 
+      :imagePath="cardElement.card_images"
+      /> -->
+      <p v-for="cardElement in cards">
+        {{ cardElement.card_images[0].image_url }}
+        {{ cardElement.name }}
+      </p>
     </section>
   </div>
 </template>
