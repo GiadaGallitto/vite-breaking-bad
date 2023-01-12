@@ -10,14 +10,15 @@ export default{
   },
 
   props: [
-    `cards`
+    `cards`,
   ],
 
   data() {
     return{
       store,
       isLoading : true,
-      searchString : ""
+      searchString : "",
+      archetypeList: ['Alien', 'Laval', 'Vylon', 'Inzektor', 'Umi', 'Gusto']
     }
   },
 
@@ -37,7 +38,11 @@ export default{
 <template>
   <div class="main-container">
     <section>
-      <input type="text" v-model.trim="searchString" @keyup.enter="$emit(`searchCard`, searchString)">
+      <select name="archetype-selector" v-model="searchString" @change="$emit(`searchCard`, searchString)">
+        <option v-for="archetypeCard in archetypeList">
+        {{ archetypeCard }}
+        </option>
+      </select>
     </section>
     <section class="cards-found">
       <h4>Found {{ cards.length }} cards</h4>
