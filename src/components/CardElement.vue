@@ -9,7 +9,7 @@ export default{
 </script>
 
 <template>
-    <div class="card">
+    <div class="card col-lg-2 col-md-3 col-sm-5 col-xs-12 mx-1">
         <div class="image-box">
             <img :src="imagePath" alt="">
         </div>
@@ -22,10 +22,10 @@ export default{
 
 <style lang="scss" scoped>
     .card{
-        width: calc((100% / 5) - 2rem);
+        // width: calc((100% / 5) - 2rem);
         display: flex;
         flex-direction: column;
-        margin: 1.5rem 1rem;
+        margin: 1.5rem 0;
         background-color: #e5af6c;
         text-align: center;
         .image-box{

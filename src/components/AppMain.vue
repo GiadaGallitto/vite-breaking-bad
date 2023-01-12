@@ -47,7 +47,7 @@ export default{
     <section class="cards-found">
       <h4>Found {{ cards.length }} cards</h4>
     </section>
-    <section class="grid-cards">
+    <section class="grid-cards row">
       <AppLoader v-if="isLoading" />
       <CardElement v-else v-for="cardElement in cards" 
       :imagePath="cardElement.card_images[0].image_url"
@@ -68,7 +68,7 @@ export default{
     .select-part{
       padding-bottom: 1.5rem;
       .archetype-selector{
-        width: 25%;
+        width: 150px;
         height: 2rem;
         font-size: 1rem;
       }
@@ -80,8 +80,8 @@ export default{
       color: white;
     }
     .grid-cards{
-      width: 100%;
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
     }
   }
