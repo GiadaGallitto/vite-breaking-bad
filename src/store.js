@@ -1,9 +1,7 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    data() {
-        return{
-            cardsList: [],
-        }
-    },
+
+    cardsList: [],
+
 });

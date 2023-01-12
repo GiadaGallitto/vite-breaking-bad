@@ -21,11 +21,9 @@ export default {
 
   methods: {
     getCard(searchedText){
-      const urlApi = (searchedText=="")?`https://db.ygoprodeck.com/api/v7/cardinfo.php?&num=10&offset=0`: `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${searchedText}&num=10&offset=0`
-      axios.get(urlApi, {
-        // params: {
-        //   archetype: searchedText
-        // }
+      // const urlApi = (searchedText=="")?`https://db.ygoprodeck.com/api/v7/cardinfo.php?&num=10&offset=0`: `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${searchedText}&num=10&offset=0`
+      axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?&num=10&offset=0`, {
+        params: (searchedText =="") ? {} : {archetype: searchedText}
       })
       .then((response) => {
         console.log(response.data.data);
@@ -45,7 +43,6 @@ export default {
 </script>
 
 <template>
-  <div>
     <header>
       <AppHeader />
     </header>
@@ -57,7 +54,6 @@ export default {
     <footer>
       <AppFooter />
     </footer>
-  </div>
 </template>
 
 <style lang="scss">

@@ -22,7 +22,6 @@ export default{
 
 <style lang="scss" scoped>
     .card{
-        // width: calc((100% / 5) - 2rem);
         display: flex;
         flex-direction: column;
         margin: 1.5rem 0;
@@ -31,6 +30,7 @@ export default{
         .image-box{
             width: 100%;
             height: 100%;
+            margin-top: 0.8rem;
             object-fit: cover;
 
             img{
