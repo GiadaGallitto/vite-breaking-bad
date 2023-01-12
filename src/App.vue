@@ -9,7 +9,7 @@ export default {
 
   data() {
     return{
-      store
+      store,
     }
   },
 
@@ -20,10 +20,11 @@ export default {
   },
 
   methods: {
-    getCard(){
+    getCard(searchedText){
 
-      axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0`, {
+      axios.get(`https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${searchedText}&num=10&offset=0`, {
         params: {
+          archetype: searchedText
         }
       })
       .then((response) => {
@@ -50,7 +51,7 @@ export default {
     </header>
   
     <main>
-      <AppMain :cards="store.cardsList" />
+      <AppMain :cards="store.cardsList" @searchCard="getCard" />
     </main>
   
     <footer>

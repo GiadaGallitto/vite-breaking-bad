@@ -17,6 +17,7 @@ export default{
     return{
       store,
       isLoading : true,
+      searchString : ""
     }
   },
 
@@ -35,6 +36,9 @@ export default{
 
 <template>
   <div class="main-container">
+    <section>
+      <input type="text" v-model.trim="searchString" @keyup.enter="$emit(`searchCard`, searchString)">
+    </section>
     <section class="cards-found">
       <h4>Found {{ cards.length }} cards</h4>
     </section>
