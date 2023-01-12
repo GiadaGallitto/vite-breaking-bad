@@ -1,9 +1,12 @@
 <script>
 import CardElement from "./CardElement.vue";
+import AppLoader from "./AppLoader.vue";
+import { store } from "../store.js";
 
 export default{
   components: {
     CardElement,
+    AppLoader
   },
 
   props: [
@@ -13,8 +16,20 @@ export default{
   data() {
     return{
       store,
+      isLoading : true,
     }
   },
+
+  methods: {
+    stopLoader() {
+      this.isLoading = false;
+    }
+  },
+
+  created() {
+    setTimeout(this.stopLoader, 2000);
+  }
+
 }
 </script>
 
@@ -24,7 +39,8 @@ export default{
       <h4>Found {{ cards.length }} cards</h4>
     </section>
     <section class="grid-cards">
-      <CardElement v-for="cardElement in cards" 
+      <AppLoader v-if="isLoading" />
+      <CardElement v-else v-for="cardElement in cards" 
       :imagePath="cardElement.card_images[0].image_url"
       :nameEl="cardElement.name"
       :archetype="cardElement.archetype"
