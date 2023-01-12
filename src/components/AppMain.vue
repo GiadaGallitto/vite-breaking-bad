@@ -1,6 +1,5 @@
 <script>
 import CardElement from "./CardElement.vue";
-import { store } from "../store.js";
 
 export default{
   components: {
@@ -16,7 +15,6 @@ export default{
       store,
     }
   },
-
 }
 </script>
 
