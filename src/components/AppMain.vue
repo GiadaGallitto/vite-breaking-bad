@@ -37,8 +37,8 @@ export default{
 
 <template>
   <div class="main-container">
-    <section>
-      <select name="archetype-selector" v-model="searchString" @change="$emit(`searchCard`, searchString)">
+    <section class="select-part">
+      <select class="archetype-selector" name="archetype-selector" v-model="searchString" @change="$emit(`searchCard`, searchString)">
         <option v-for="archetypeCard in archetypeList">
         {{ archetypeCard }}
         </option>
@@ -65,6 +65,14 @@ export default{
     background-color: white;
     border-radius: 20px;
     padding: 3.5rem;
+    .select-part{
+      padding-bottom: 1.5rem;
+      .archetype-selector{
+        width: 25%;
+        height: 2rem;
+        font-size: 1rem;
+      }
+    }
     .cards-found{
       width: 100%;
       background-color: #212529;
