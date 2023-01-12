@@ -44,17 +44,19 @@ export default {
 </script>
 
 <template>
-  <header>
-    <AppHeader />
-  </header>
-
-  <main>
-    <AppMain :cards="store.cardsList" />
-  </main>
-
-  <footer>
-    <AppFooter />
-  </footer>
+  <div>
+    <header>
+      <AppHeader />
+    </header>
+  
+    <main>
+      <AppMain :cards="store.cardsList" />
+    </main>
+  
+    <footer>
+      <AppFooter />
+    </footer>
+  </div>
 </template>
 
 <style lang="scss">
